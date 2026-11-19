@@ -151,6 +151,21 @@ section.block{padding:clamp(64px,9vw,128px) 0;border-bottom:1px solid var(--rule
 .film.loop .meta h3{font-size:22px}
 .film.loop .ghost-title{font-size:clamp(26px,3.4vw,48px)}
 
+/* stills */
+.stills{padding-bottom:clamp(64px,9vw,128px);border-bottom:1px solid var(--rule)}
+.stillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.still{position:relative;margin:0;overflow:hidden;background:var(--plate);border:1px solid var(--rule);aspect-ratio:16/9}
+.still img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.06) brightness(.9);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s}
+.still:hover img{transform:scale(1.04);filter:none}
+.still figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:26px 12px 10px;background:linear-gradient(0deg,rgba(10,8,8,.88),transparent);font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.still figcaption b{font-weight:600;color:var(--bone)}
+.still figcaption span{color:var(--ash)}
+.stillgrid .still:nth-child(n+19){display:none}
+.stills.all .stillgrid .still:nth-child(n+19){display:block}
+.feature{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.feature .lead{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.more{margin-top:14px}
+
 /* pricing */
 .table{border-top:1px solid var(--rule)}
 .rowp{display:grid;grid-template-columns:64px minmax(0,1.1fr) minmax(0,1.6fr) minmax(120px,auto);gap:22px;align-items:start;padding:26px 0;border-bottom:1px solid var(--rule);position:relative}
@@ -227,6 +242,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 #player button{position:absolute;top:18px;right:var(--gutter)}
 
 @media (max-width:900px){
+  .stillgrid,.feature{grid-template-columns:repeat(2,1fr)}
   .hero .wrap,.review,.proof,.team{grid-template-columns:1fr}
   .portrait{max-width:360px}
   .crew div{grid-template-columns:1fr;gap:4px}
@@ -243,6 +259,8 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
   .head{grid-template-columns:1fr}
 }
 @media (max-width:520px){
+  .stillgrid{grid-template-columns:1fr}
+  .stillgrid .still:nth-child(n+9){display:none}
   .film.s{grid-column:span 12}
   .two{grid-template-columns:1fr}
   .nav nav a:not(.btn){display:none}
@@ -250,7 +268,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 @media (prefers-reduced-motion:reduce){
   #grain,.leak,.rec{animation:none}
   html{scroll-behavior:auto}
-  .frame img,.btn{transition:none}
+  .frame img,.btn,.still img{transition:none}
 }
 </style>
 </head>
@@ -267,6 +285,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
     <nav aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
+      <a href="#stills">Stills</a>
       <a href="#pricing">Pricing</a>
       <a href="#team">Team</a>
       <a href="#review">Free review</a>
@@ -472,6 +491,58 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
       <span class="mono">Want one like these for your product?</span>
       <a class="btn" href="#brief">Get a quote</a>
     </div>
+  </div>
+</section>
+
+<section class="reel stills" id="stills" aria-label="Stills from the work">
+  <div class="wrap">
+    <div class="reel-head mono"><span><i class="rec"></i>Featured set — Lambo Spec</span><span>Automotive photography · Miami</span></div>
+    <div class="feature">
+      <figure class="still lead"><img src="img/lambo-01-warehouse.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — warehouse set" width="1600" height="900" loading="lazy" decoding="async"><figcaption><b>Lambo Spec</b><span>Automotive · Miami</span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-02-graffiti.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — street" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Street</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-03-pair.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — two-car set" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Two-car set</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-04-overhead.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — overhead" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Overhead</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-05-driver.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — portrait" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Portrait</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-06-mural.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — mural" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Mural</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-07-white.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — mural" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Mural</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-08-wheel.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — detail" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Detail</b><span></span></figcaption></figure>
+      <figure class="still"><img src="img/lambo-09-badge.webp" alt="Lambo Spec Lamborghini Huracan shoot in Miami — detail" width="1000" height="562" loading="lazy" decoding="async"><figcaption><b>Detail</b><span></span></figcaption></figure>
+    </div>
+    <div class="reel-head mono" style="margin-top:clamp(40px,6vw,72px)"><span><i class="rec"></i>Stills from the work</span><span>30 clients · product, hospitality, automotive, apparel</span></div>
+    <div class="stillgrid">
+      <figure class="still"><img src="img/02-paramount-dubai.webp" alt="Paramount Dubai — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Paramount Dubai</b><span>Hospitality</span></figcaption></figure>
+      <figure class="still"><img src="img/01-kingbull.webp" alt="KingBull — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>KingBull</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/05-kre8.webp" alt="Kre8 — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Kre8</b><span>Portrait</span></figcaption></figure>
+      <figure class="still"><img src="img/03-bluetti.webp" alt="BLUETTI — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>BLUETTI</b><span>Portable power</span></figcaption></figure>
+      <figure class="still"><img src="img/16-hyatt-cairo.webp" alt="Hyatt Cairo — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Hyatt Cairo</b><span>Hospitality</span></figcaption></figure>
+      <figure class="still"><img src="img/20-lambo-spec.webp" alt="Lambo Spec — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Lambo Spec</b><span>Automotive</span></figcaption></figure>
+      <figure class="still"><img src="img/08-freedare.webp" alt="Freedare — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Freedare</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/19-poboys-landscape.webp" alt="PoBoys Landscape — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>PoBoys Landscape</b><span>Local business</span></figcaption></figure>
+      <figure class="still"><img src="img/30-pecron.webp" alt="Pecron — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Pecron</b><span>Portable power</span></figcaption></figure>
+      <figure class="still"><img src="img/21-soleboy.webp" alt="Soleboy — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Soleboy</b><span>Apparel</span></figcaption></figure>
+      <figure class="still"><img src="img/13-gotrax.webp" alt="Gotrax — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Gotrax</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/15-gondwana.webp" alt="Gondwana — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Gondwana</b><span>Hospitality</span></figcaption></figure>
+      <figure class="still"><img src="img/04-lion-energy.webp" alt="Lion Energy — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Lion Energy</b><span>Portable power</span></figcaption></figure>
+      <figure class="still"><img src="img/28-aleloop.webp" alt="Aleloop — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Aleloop</b><span>Lifestyle</span></figcaption></figure>
+      <figure class="still"><img src="img/11-heybike-jasion.webp" alt="HeyBike / Jasion — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>HeyBike / Jasion</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/18-revixcare.webp" alt="REVIX — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>REVIX</b><span>Wellness</span></figcaption></figure>
+      <figure class="still"><img src="img/26-magneto.webp" alt="Magneto — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Magneto</b><span>Boardsports</span></figcaption></figure>
+      <figure class="still"><img src="img/29-gooloo.webp" alt="Gooloo — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Gooloo</b><span>Automotive</span></figcaption></figure>
+      <figure class="still"><img src="img/07-magic-cycle.webp" alt="Magicycle — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Magicycle</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/22-tlf-apparel.webp" alt="TLF Apparel — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>TLF Apparel</b><span>Apparel</span></figcaption></figure>
+      <figure class="still"><img src="img/23-levi.webp" alt="Levy — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Levy</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/17-nascar.webp" alt="NASCAR — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>NASCAR</b><span>Sport</span></figcaption></figure>
+      <figure class="still"><img src="img/14-niu.webp" alt="NIU — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>NIU</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/25-possway.webp" alt="Possway — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Possway</b><span>Boardsports</span></figcaption></figure>
+      <figure class="still"><img src="img/06-5th-wheel.webp" alt="5th Wheel — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>5th Wheel</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/10-beecool.webp" alt="Beecool — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Beecool</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/27-wow-go.webp" alt="WowGo — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>WowGo</b><span>Boardsports</span></figcaption></figure>
+      <figure class="still"><img src="img/09-velowave.webp" alt="Velowave — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Velowave</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/12-g-force.webp" alt="G-Force — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>G-Force</b><span>E-mobility</span></figcaption></figure>
+      <figure class="still"><img src="img/24-freego.webp" alt="Freego — still from a No Coordinates Media shoot" width="1280" height="720" loading="lazy" decoding="async"><figcaption><b>Freego</b><span>E-mobility</span></figcaption></figure>
+    </div>
+    <button class="btn ghost more" id="moreStills" type="button">Show all 30</button>
+    <div class="after"><span class="mono">Photo sets are delivered with every film.</span><a class="btn" href="#brief">Get a quote</a></div>
   </div>
 </section>
 
@@ -688,6 +759,8 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
       f.addEventListener('mouseleave',function(){clearTimeout(t);stopPreview(f)});
     });
   }
+
+  var ms=document.getElementById('moreStills');if(ms)ms.addEventListener('click',function(){document.getElementById('stills').classList.add('all');ms.remove();});
 
   var player=document.getElementById('player'),box=document.getElementById('playerBox');
   function closePlayer(){player.classList.remove('on');box.innerHTML='';}
