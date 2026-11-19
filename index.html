@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miami &amp; Fort Lauderdale Video Production | No Coordinates</title>
+<link rel="canonical" href="https://nocoordinatesmedia.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="No Coordinates Media — Video production in Miami &amp; Fort Lauderdale">
+<meta property="og:url" content="https://nocoordinatesmedia.com/">
+<meta name="description" content="Video production in Miami and Fort Lauderdale: product films and photos, corporate, law firm and medical practice videos. Prices from $1,500.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"No Coordinates Media","url":"https://nocoordinatesmedia.com/","email":"judson@nocoordinatesmedia.com","telephone":"+1-954-405-2460","description":"Video production studio in South Florida filming product videos and photography, corporate and brand films, and videos for law firms and medical practices.","areaServed":["Miami, FL","Fort Lauderdale, FL","United States"],"founder":{"@type":"Person","name":"Judson Robertson"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inconsolata:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a darkroom contact sheet. Black stock, white type, signal red over a deep oxblood.
+   Numbered sections run 00-07 down a single column; every section ends in the same ask. */
+:root{
+  color-scheme:dark;
+  --stock:#0a0808;      /* page */
+  --plate:#130f0f;      /* raised panels */
+  --rule:#2b2222;       /* hairlines */
+  --bone:#f2eeea;       /* primary text */
+  --ash:#948a88;        /* secondary text */
+  --tally:#e3131c;      /* primary red */
+  --deep:#6f0a10;       /* secondary: darker red for glows, fills, hovers */
+  --display:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Inconsolata",ui-monospace,Menlo,monospace;
+  --mono:"Inconsolata",ui-monospace,Menlo,monospace;
+  --gutter:clamp(18px,4vw,56px);
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--stock)}
+body{background:var(--stock);color:var(--bone);font-family:var(--body);font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--tally);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;letter-spacing:-.035em}
+em{font-style:normal}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash)}
+.tally{color:var(--tally)}
+
+/* grain */
+#grain{position:fixed;inset:-120px;z-index:50;pointer-events:none;opacity:.17;mix-blend-mode:overlay;background-size:220px 220px;animation:jitter .9s steps(6) infinite}
+@keyframes jitter{0%{transform:translate(0,0)}17%{transform:translate(-38px,22px)}34%{transform:translate(27px,-41px)}51%{transform:translate(-14px,-19px)}68%{transform:translate(44px,31px)}85%{transform:translate(-29px,9px)}100%{transform:translate(0,0)}}
+.vignette{position:fixed;inset:0;z-index:49;pointer-events:none;background:radial-gradient(ellipse at 50% 40%,transparent 55%,rgba(0,0,0,.55) 100%)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:linear-gradient(var(--stock),rgba(10,9,8,.82) 70%,transparent);padding:18px 0 22px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase}
+.mark svg{width:20px;height:20px}
+.nav nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);flex-wrap:wrap}
+.nav nav a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ash)}
+.nav nav a:hover{color:var(--bone)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--tally);color:#fff !important;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 20px;border:0;border-radius:2px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:#b90d15;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--bone) !important;border:1px solid var(--rule)}
+.btn.ghost:hover{border-color:var(--bone);background:transparent}
+
+/* hero */
+.hero{position:relative;border-bottom:1px solid var(--rule);margin-top:-64px;padding-top:64px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:
+  radial-gradient(60% 70% at 78% 30%,rgba(150,14,22,.22),transparent 70%),
+  radial-gradient(50% 60% at 12% 80%,rgba(111,10,16,.35),transparent 70%),var(--stock)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,8,.93) 0%,rgba(10,9,8,.72) 45%,rgba(10,9,8,.55) 100%),linear-gradient(0deg,var(--stock) 0%,transparent 35%)}
+.hero-bg iframe{position:absolute;top:50%;left:50%;width:max(100%,177.78vh);height:max(100%,56.25vw);min-height:100%;transform:translate(-50%,-50%);border:0;filter:saturate(.75) contrast(1.08)}
+.leak{position:absolute;width:60vw;height:60vw;border-radius:50%;filter:blur(90px);opacity:.55;background:var(--deep);top:-25vw;right:-18vw;animation:drift 16s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-9vw,7vw) scale(1.15);opacity:.18}}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:clamp(28px,5vw,72px);align-items:end;padding-top:clamp(56px,9vw,120px);padding-bottom:clamp(40px,6vw,84px)}
+.slate{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.slate span{display:inline-flex;align-items:center;gap:8px}
+.rec{width:8px;height:8px;border-radius:50%;background:var(--tally);animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+h1{font-size:clamp(40px,7vw,100px);line-height:.96}
+h1 em{color:var(--tally)}
+.lede{max-width:52ch;margin-top:26px;font-size:clamp(17px,1.5vw,20px);color:#d2ccbf}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.terms{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;padding-top:20px;border-top:1px solid var(--rule)}
+.terms div b,.facts b{text-transform:none;letter-spacing:0}
+.terms div b{display:block;font-family:var(--display);font-weight:500;font-size:34px;line-height:1;color:var(--bone)}
+
+/* form */
+.brief{background:rgba(19,13,13,.9);border:1px solid var(--rule);padding:26px;backdrop-filter:blur(6px);position:relative}
+.brief::before,.brief::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--tally)}
+.brief::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.brief::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.brief h2{font-size:30px;line-height:1.05;margin:8px 0 6px}
+.brief p.sub{color:var(--ash);font-size:15px;margin-bottom:18px}
+form{display:grid;gap:12px}
+label{display:grid;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash)}
+input,select,textarea{width:100%;background:#0d0c0b;border:1px solid var(--rule);color:var(--bone);font-family:var(--body);font-size:16px;padding:12px 13px;border-radius:2px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--tally)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form .btn{justify-content:center;margin-top:4px;padding:15px}
+.fine{font-size:13px;color:var(--ash);margin-top:10px}
+.result{display:none;margin-top:14px;border:1px dashed var(--rule);padding:14px;font-size:14px}
+.result.on{display:block}
+.result pre{white-space:pre-wrap;font-family:var(--mono);font-size:12px;color:#cfc9bc;margin:10px 0;max-height:170px;overflow:auto}
+.result .row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* logos */
+.logos{border-bottom:1px solid var(--rule);padding:22px 0}
+.logos .wrap{display:flex;align-items:baseline;gap:14px 34px;flex-wrap:wrap}
+.logos b{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.2vw,28px);color:#bdb6a8;letter-spacing:.01em}
+
+/* sections */
+section.block{padding:clamp(64px,9vw,128px) 0;border-bottom:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin-bottom:clamp(28px,4vw,52px)}
+.head h2{font-size:clamp(38px,5.6vw,76px);line-height:.98;margin-top:14px}
+.head h2 em{}
+.head p{max-width:46ch;color:var(--ash);margin-top:16px}
+
+/* work */
+.cases{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.film{position:relative;display:block;text-decoration:none;background:var(--plate);border:1px solid var(--rule);overflow:hidden;cursor:pointer;text-align:left;color:inherit;font:inherit;padding:0;width:100%}
+.film.a{grid-column:span 7}.film.b{grid-column:span 5}.film.c{grid-column:span 12}
+.film.s{grid-column:span 3}
+.film.h{grid-column:span 6}
+.frame{position:relative;aspect-ratio:16/9;overflow:hidden;background:
+  radial-gradient(70% 90% at 70% 20%,rgba(150,14,22,.28),transparent 70%),
+  radial-gradient(60% 80% at 15% 90%,rgba(111,10,16,.4),transparent 70%),#110c0c}
+.film.c .frame{aspect-ratio:21/8}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.1) brightness(.82);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s;display:none}
+.ext .frame img{display:block}
+.film:hover .frame img{transform:scale(1.045);filter:saturate(1) contrast(1.05) brightness(.95)}
+.frame .ghost-title{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:clamp(34px,6vw,84px);font-weight:600;letter-spacing:-.04em;color:rgba(242,238,234,.14);text-align:center;line-height:.9;padding:10px}
+.film.s .ghost-title{font-size:clamp(24px,2.6vw,36px)}
+.ext .frame .ghost-title{display:none}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,9,8,.9),transparent 55%)}
+.play{position:absolute;z-index:2;left:18px;bottom:16px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.play i{width:34px;height:34px;border-radius:50%;border:1px solid var(--bone);display:grid;place-items:center;transition:background .2s,border-color .2s}
+.play i::before{content:"";border-left:9px solid var(--bone);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.film:hover .play i{background:var(--tally);border-color:var(--tally)}
+.tc{position:absolute;z-index:2;right:16px;bottom:18px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--bone);font-variant-numeric:tabular-nums}
+.meta{padding:18px 18px 20px;display:grid;gap:6px}
+.meta h3{font-size:clamp(24px,2.5vw,34px);line-height:1.05}
+.meta p{color:var(--ash);font-size:15px;max-width:60ch}
+.film.s .meta h3{font-size:22px}
+.after{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:34px}
+
+/* reel + live previews */
+.reel{padding:clamp(28px,4vw,48px) 0 0}
+.reel-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.reel-head span{display:inline-flex;align-items:center;gap:8px}
+.loops{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.frame iframe{position:absolute;top:50%;left:50%;width:100%;aspect-ratio:16/9;height:auto;min-height:100%;transform:translate(-50%,-50%);border:0;pointer-events:none;filter:saturate(.85) contrast(1.06)}
+.film.loop .meta h3{font-size:22px}
+.film.loop .ghost-title{font-size:clamp(26px,3.4vw,48px)}
+
+/* pricing */
+.table{border-top:1px solid var(--rule)}
+.rowp{display:grid;grid-template-columns:64px minmax(0,1.1fr) minmax(0,1.6fr) minmax(120px,auto);gap:22px;align-items:start;padding:26px 0;border-bottom:1px solid var(--rule);position:relative}
+.rowp.th{padding:12px 0}
+.rowp h3{font-size:clamp(26px,2.6vw,36px);line-height:1.05}
+.rowp p{color:#c9c3b6;font-size:16px}
+.rowp .price{font-family:var(--display);font-size:clamp(30px,3.2vw,44px);line-height:1;text-align:right;font-variant-numeric:tabular-nums}
+.rowp .price small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-top:8px}
+.flag{background:var(--deep);color:#fff !important;border-color:var(--deep) !important;display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tally);border:1px solid var(--tally);padding:3px 7px;margin-top:10px;border-radius:2px}
+.incl{display:flex;gap:10px 26px;flex-wrap:wrap;margin-top:26px}
+.incl span::before{content:"+ ";color:var(--tally)}
+
+/* review */
+.review{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(28px,5vw,72px);align-items:center}
+.review ul{list-style:none;display:grid;gap:10px;margin-top:22px}
+.review li{display:grid;grid-template-columns:30px 1fr;color:#c9c3b6}
+.review li::before{content:"\2192";color:var(--tally)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule)}
+.step{padding:30px 26px 34px;border-right:1px solid var(--rule)}
+.step:last-child{border-right:0}
+.step h3{font-size:40px;margin:16px 0 10px}
+.step p{color:#c9c3b6}
+
+/* team */
+.team{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
+.portrait{position:relative;aspect-ratio:4/5;border:1px solid var(--rule);overflow:hidden;display:grid;place-items:center;background:
+  radial-gradient(80% 70% at 70% 15%,rgba(150,14,22,.45),transparent 70%),
+  radial-gradient(70% 70% at 10% 95%,rgba(111,10,16,.5),transparent 70%),#110c0c}
+.portrait span{font-family:var(--display);font-weight:600;letter-spacing:-.05em;font-size:clamp(90px,13vw,170px);color:rgba(242,238,234,.16);line-height:1}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1)}
+.lead{margin-top:18px}
+.lead h3{font-size:clamp(28px,3vw,40px);line-height:1.05}
+.lead p{color:#c9c3b6;margin-top:10px;max-width:44ch}
+.crew{border-top:1px solid var(--rule)}
+.crew div{display:grid;grid-template-columns:minmax(150px,.7fr) minmax(0,1.3fr);gap:18px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.crew b{font-family:var(--display);font-weight:500;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em}
+.crew p{color:#c9c3b6}
+
+/* proof */
+.quote{font-weight:500;letter-spacing:-.03em;font-family:var(--display);font-size:clamp(30px,4.4vw,60px);line-height:1.06;max-width:22ch;text-wrap:balance}
+.quote::before{content:"\201C";color:var(--tally)}
+.quote::after{content:"\201D";color:var(--tally)}
+.proof{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:clamp(28px,5vw,72px);align-items:end}
+.who{margin-top:24px}
+.facts{display:grid;gap:22px}
+.facts div{border-top:1px solid var(--rule);padding-top:14px}
+.facts b{font-family:var(--display);font-weight:500;font-size:44px;line-height:1;display:block}
+
+/* faq */
+details{border-bottom:1px solid var(--rule)}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font-family:var(--display);font-size:clamp(22px,2.4vw,30px)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);font-size:20px;color:var(--tally);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:#c9c3b6;max-width:68ch;padding:0 0 24px}
+
+/* closer */
+.closer{padding:clamp(72px,11vw,150px) 0;text-align:left;position:relative;overflow:hidden}
+.closer h2{font-size:clamp(42px,7.6vw,112px);line-height:.95}
+.closer h2 em{color:var(--tally)}
+.closer .hero-cta{margin-top:34px}
+footer{border-top:1px solid var(--rule);padding:28px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px 40px;flex-wrap:wrap}
+footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+
+/* player */
+#player{position:fixed;inset:0;z-index:60;background:rgba(5,4,4,.94);display:none;align-items:center;justify-content:center;padding:var(--gutter)}
+#player.on{display:flex}
+#player .box{width:min(1100px,100%);aspect-ratio:16/9;background:#000;border:1px solid var(--rule)}
+#player iframe{width:100%;height:100%;border:0}
+#player button{position:absolute;top:18px;right:var(--gutter)}
+
+@media (max-width:900px){
+  .hero .wrap,.review,.proof,.team{grid-template-columns:1fr}
+  .portrait{max-width:360px}
+  .crew div{grid-template-columns:1fr;gap:4px}
+  .film.a,.film.b,.film.c,.film.h{grid-column:span 12}
+  .film.c .frame{aspect-ratio:16/9}
+  .film.s{grid-column:span 6}
+  .rowp{grid-template-columns:40px 1fr;gap:10px 14px}
+  .rowp p,.rowp .price{grid-column:2;text-align:left}
+  .rowp.th{display:none}
+  .loops{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--rule)}
+  .step:last-child{border-bottom:0}
+  .head{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .film.s{grid-column:span 12}
+  .two{grid-template-columns:1fr}
+  .nav nav a:not(.btn){display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  #grain,.leak,.rec{animation:none}
+  html{scroll-behavior:auto}
+  .frame img,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="No Coordinates Media, home">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="5.5"/><path d="M10 0v6M10 14v6M0 10h6M14 10h6"/></svg>
+      No Coordinates
+    </a>
+    <nav aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#team">Team</a>
+      <a href="#review">Free review</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#brief">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-bg" id="heroBg" aria-hidden="true"><div class="leak"></div></div>
+  <div class="wrap">
+    <div>
+      <div class="slate mono">
+        <span><i class="rec"></i>00 / Thesis</span>
+        <span>Video production studio</span>
+        <span>Miami · Fort Lauderdale</span>
+      </div>
+      <h1>Video production in Miami &amp; Fort Lauderdale, built to <em>sell.</em></h1>
+      <p class="lede">No Coordinates Media films product videos and photos, corporate and brand films, and client-facing videos for law firms and medical practices. One crew, prices on the page, and product films delivered in 14 days.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#brief">Get a quote</a>
+        <a class="btn ghost" href="#work">Watch the work</a>
+      </div>
+      <div class="terms mono">
+        <div><b>14 days</b>product arrival to final files</div>
+        <div><b>$1,500</b>starting price per product</div>
+        <div><b>Full rights</b>every channel, no licence fees</div>
+      </div>
+    </div>
+
+    <aside class="brief" id="brief" aria-labelledby="briefTitle">
+      <span class="mono tally">Start here</span>
+      <h2 id="briefTitle">Tell us what you need.</h2>
+      <p class="sub">Five fields. You get a price and a shoot plan back within one business day.</p>
+      <form id="quoteForm" novalidate>
+        <div class="two">
+          <label for="qName">Your name<input id="qName" name="name" autocomplete="name" required></label>
+          <label for="qEmail">Email<input id="qEmail" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="qBrand">Brand or website<input id="qBrand" name="brand" placeholder="yourbrand.com" required></label>
+        <label for="qLink">Product, listing or project link<input id="qLink" name="link" placeholder="Optional" inputmode="url"></label>
+        <label for="qBudget">What do you need
+          <select id="qBudget" name="budget">
+            <option>Product video and photos — from $1,500</option>
+            <option>Three products, one shoot — $2,500</option>
+            <option>Corporate or brand film — production day $3,000</option>
+            <option>Law firm video</option>
+            <option>Medical practice video</option>
+            <option>Website or social video</option>
+            <option>Product for content (products over $500)</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Get my quote</button>
+      </form>
+      <div class="result" id="quoteResult" role="status" aria-live="polite"></div>
+      <p class="fine">Prefer chat? WhatsApp or WeChat: +1 954 405 2460</p>
+    </aside>
+  </div>
+</section>
+
+<div class="logos" aria-label="Brands we have filmed for">
+  <div class="wrap">
+    <span class="mono">Filmed for</span>
+    <b>KingBull</b><b>Pecron</b><b>Gotrax</b><b>NIU</b><b>Lion Energy</b><b>Freedare</b><b>Magicycle</b><b>Dunlop</b><b>REVIX</b>
+  </div>
+</div>
+
+<section class="reel" aria-label="Now playing">
+  <div class="wrap">
+    <div class="reel-head mono"><span><i class="rec"></i>Now playing</span><span>Click any film for sound</span></div>
+    <div class="loops">
+      <button class="film loop" data-id="902301513" data-th="1781646902-7f2718d26308b080dbb341e7fed45b17429683c4577a7226167064e242dbb446">
+        <div class="frame"><img alt="Gotrax Nephele e-bike film" loading="lazy"><div class="ghost-title">Gotrax Nephele</div><span class="play"><i></i>Play film</span><span class="tc">00:51</span></div>
+        <div class="meta"><span class="mono">E-mobility</span><h3>Gotrax Nephele</h3></div>
+      </button>
+      <button class="film loop" data-id="842619294" data-th="1693823724-a6e3aea7b38d63ebdd8a24ddfe3a10a0cab7b2756913eeb508036791405962e4">
+        <div class="frame"><img alt="Freedare smart e-bike film" loading="lazy"><div class="ghost-title">Freedare</div><span class="play"><i></i>Play film</span><span class="tc">01:22</span></div>
+        <div class="meta"><span class="mono">E-mobility</span><h3>Freedare smart e-bike</h3></div>
+      </button>
+      <button class="film loop" data-id="876505611" data-th="1741472976-cfbc497d40386033148b096ebaf5bc502b26aa650b137c409c88e7ae8812a0db">
+        <div class="frame"><img alt="5th Wheel e-bike film" loading="lazy"><div class="ghost-title">5th Wheel</div><span class="play"><i></i>Play film</span><span class="tc">01:11</span></div>
+        <div class="meta"><span class="mono">E-mobility</span><h3>5th Wheel e-bikes</h3></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono">01 / Services</span>
+        <h2>One studio. <em class="tally">Five kinds of work.</em></h2>
+        <p>Based in South Florida and filming across Miami-Dade and Broward. Brands outside the area ship the product to us.</p>
+      </div>
+    </div>
+    <div class="table">
+      <div class="rowp th mono"><span>Index</span><span>Service</span><span>Scope</span><span style="text-align:right">From</span></div>
+      <div class="rowp">
+        <span class="mono">01</span>
+        <h3>Product video and photography</h3>
+        <p>Films and photo sets for Amazon listings, brand websites and paid social. Real people using the product, shot in the US.</p>
+        <div class="price">$1,500<small>per product</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">02</span>
+        <h3>Corporate and brand films</h3>
+        <p>Company stories, founder interviews, recruiting films, event recaps and commercials. Filmed at your office or on location.</p>
+        <div class="price">$3,000<small>production day</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">03</span>
+        <h3>Law firm videos</h3>
+        <p>Attorney profiles, practice-area explainers, client testimonials and firm overview films for your website and intake pages.</p>
+        <div class="price">Quote<small>one business day</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">04</span>
+        <h3>Medical practice videos</h3>
+        <p>Doctor introductions, service and procedure explainers, office tours and patient stories, scheduled around clinic hours.</p>
+        <div class="price">Quote<small>one business day</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">05</span>
+        <h3>Website and social video</h3>
+        <p>Homepage films, about-us videos and vertical cuts for Instagram, TikTok and ads, planned as one shoot.</p>
+        <div class="price">Quote<small>one business day</small></div>
+      </div>
+    </div>
+    <div class="after"><span class="mono">Tell us the job and we'll price it.</span><a class="btn" href="#brief">Get a quote</a></div>
+  </div>
+</section>
+
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono">02 / Selected work</span>
+        <h2>Real people. Real locations. <em>No green screen.</em></h2>
+        <p>Commercials, product films, interviews and a law firm film, all shot on location.</p>
+      </div>
+      <a class="btn ghost" href="https://vimeo.com/railaymedia" target="_blank" rel="noopener">All films on Vimeo</a>
+    </div>
+
+    <div class="cases" id="cases">
+      <button class="film a" data-id="896634422" data-th="1771986877-967d1321a3921c7cbe5b8b3ecadf9b941acf12a2223a69749c1662d6010b2c96">
+        <div class="frame"><img alt="KingBull electric bike commercial" loading="lazy"><div class="ghost-title">KingBull</div><span class="play"><i></i>Play film</span><span class="tc">01:24</span></div>
+        <div class="meta"><span class="mono">E-mobility / Commercial</span><h3>KingBull electric bike</h3><p>A full-length commercial for the brand's e-bike. 19,500+ plays on Vimeo.</p></div>
+      </button>
+      <button class="film b" data-id="982165850" data-th="1897528096-fde7b7356512d425754874e8811c3e51fc66b2af3d922b59e96333ba2c61fed9">
+        <div class="frame"><img alt="Pecron portable power station commercial" loading="lazy"><div class="ghost-title">Pecron</div><span class="play"><i></i>Play film</span><span class="tc">01:26</span></div>
+        <div class="meta"><span class="mono">Portable power / Commercial</span><h3>Pecron power station</h3><p>A power station commercial, with a photo set delivered alongside the film.</p></div>
+      </button>
+      <button class="film c" data-id="883393225" data-th="1751887747-4f6741284a0d291ae89882f51ce8fa3597d952cc3a9d2879460d5a8a84ea03e1">
+        <div class="frame"><img alt="Gotrax Ultra Flex e-scooter film" loading="lazy"><div class="ghost-title">Gotrax Ultra Flex</div><span class="play"><i></i>Play film</span><span class="tc">00:54</span></div>
+        <div class="meta"><span class="mono">E-mobility / Product film</span><h3>Gotrax Ultra Flex</h3><p>Under a minute and built for the listing. This is what the $1,500 package looks like.</p></div>
+      </button>
+      <button class="film h" data-yt="029ozCkn2HU">
+        <div class="frame"><img alt="Abogada Julia law firm film" loading="lazy"><div class="ghost-title">Abogada Julia</div><span class="play"><i></i>Play film</span></div>
+        <div class="meta"><span class="mono">Law firm / Profile film</span><h3>Abogada Julia</h3><p>A portfolio film for a law firm.</p></div>
+      </button>
+      <button class="film h" data-yt="-z8ox4u1S4M">
+        <div class="frame"><img alt="Exotic Car Hacks Aston Martin Valhalla episode" loading="lazy"><div class="ghost-title">Exotic Car Hacks</div><span class="play"><i></i>Play film</span></div>
+        <div class="meta"><span class="mono">Automotive / YouTube series</span><h3>Exotic Car Hacks</h3><p>The Aston Martin Valhalla episode from the channel's YouTube series.</p></div>
+      </button>
+      <button class="film s" data-id="902308658" data-th="1782164743-14c08aaaffe4a89cd37b20da26b62422b0379ada64bfb9dd537eb8a711dd62bc">
+        <div class="frame"><img alt="NIU e-bike film" loading="lazy"><div class="ghost-title">NIU</div><span class="play"><i></i></span><span class="tc">00:44</span></div>
+        <div class="meta"><span class="mono">E-mobility</span><h3>NIU e-bike</h3></div>
+      </button>
+      <button class="film s" data-id="892026877" data-th="1764995906-9167cb472b6863409585a8be9795b0875e2cec688bc148282a1b9533bba69f25">
+        <div class="frame"><img alt="Lion Energy power station commercial" loading="lazy"><div class="ghost-title">Lion Energy</div><span class="play"><i></i></span><span class="tc">01:30</span></div>
+        <div class="meta"><span class="mono">Portable power</span><h3>Lion Energy</h3></div>
+      </button>
+      <button class="film s" data-id="878339559" data-th="1744254680-e9d856c28e94dedd3d0d167ad676a22cb07d0bcf35b361b040eee8496e8852df">
+        <div class="frame"><img alt="REVIX heating pack commercial" loading="lazy"><div class="ghost-title">REVIX</div><span class="play"><i></i></span><span class="tc">00:52</span></div>
+        <div class="meta"><span class="mono">Wellness</span><h3>REVIX heating pack</h3></div>
+      </button>
+      <button class="film s" data-id="808860332" data-th="1633911783-3b6843256d510e82990cc87b4f0545c6698a31ec866eac4561061fa56f31978f">
+        <div class="frame"><img alt="Arencia facial cleanser product film" loading="lazy"><div class="ghost-title">Arencia</div><span class="play"><i></i></span><span class="tc">00:34</span></div>
+        <div class="meta"><span class="mono">Skincare</span><h3>Arencia cleanser</h3></div>
+      </button>
+      <button class="film s" data-id="876515274" data-th="1741477199-e266539a0e0712d37e2632766eff2f725c56313b88b23106cadf64efb56c093a">
+        <div class="frame"><img alt="Magicycle e-bike film" loading="lazy"><div class="ghost-title">Magicycle</div><span class="play"><i></i></span><span class="tc">01:10</span></div>
+        <div class="meta"><span class="mono">E-mobility</span><h3>Magicycle e-bike</h3></div>
+      </button>
+      <button class="film s" data-id="883396882" data-th="1751890816-c373ea0bf818bed4daf6f848ddcbe3e8332dfe837c1f575e9cd81b717bd38404">
+        <div class="frame"><img alt="Levy electric scooter commercial" loading="lazy"><div class="ghost-title">Levy</div><span class="play"><i></i></span><span class="tc">00:48</span></div>
+        <div class="meta"><span class="mono">E-mobility</span><h3>Levy e-scooter</h3></div>
+      </button>
+      <button class="film s" data-id="933764817" data-th="1832367231-0ef48bfb536c7c2e3e30df9a6b09598a6bed3ded063366e16b83729d892efbb5">
+        <div class="frame"><img alt="Dunlop interview with James Blake at the Miami Open" loading="lazy"><div class="ghost-title">Dunlop</div><span class="play"><i></i></span><span class="tc">01:17</span></div>
+        <div class="meta"><span class="mono">Sport / Interview</span><h3>Dunlop at the Miami Open</h3></div>
+      </button>
+      <button class="film s" data-id="846438868" data-th="1699784726-33d9e10c8b0477fcf51a22d9da59459e6038d81201452029ed1495ad09210baa">
+        <div class="frame"><img alt="NASCAR Store merchandise commercial" loading="lazy"><div class="ghost-title">NASCAR Store</div><span class="play"><i></i></span><span class="tc">00:25</span></div>
+        <div class="meta"><span class="mono">Sport / Commercial</span><h3>NASCAR Store</h3></div>
+      </button>
+    </div>
+    <div class="after">
+      <span class="mono">Want one like these for your product?</span>
+      <a class="btn" href="#brief">Get a quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pricing">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono">03 / Pricing</span>
+        <h2>Product packages. <em>Prices on the page.</em></h2>
+        <p>No agency retainers, no upsells. Pick the one that fits and we confirm the scope in writing before anything ships. Corporate, law firm and medical shoots are quoted by the production day.</p>
+      </div>
+    </div>
+    <div class="table">
+      <div class="rowp th mono"><span>Index</span><span>Package</span><span>What you get</span><span style="text-align:right">Price</span></div>
+      <div class="rowp">
+        <span class="mono">01</span>
+        <h3>Single product</h3>
+        <p>One 45-second hero film and 15 edited photos. Shot in the US with a real person using the product.</p>
+        <div class="price">$1,500<small>starting</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">02</span>
+        <div><h3>Three products, one shoot</h3><span class="flag">Lowest cost per product</span></div>
+        <p>Each product gets its own 45-second film and 15 photos, plus shared lifestyle scenes. One talent, one setup.</p>
+        <div class="price">$2,500<small>all three</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">03</span>
+        <h3>Production day</h3>
+        <p>A full day on location with cast talent and a crew of three. One 30 to 60-second hero film, three vertical cuts for ads, 15 stills.</p>
+        <div class="price">$3,000<small>per day</small></div>
+      </div>
+      <div class="rowp">
+        <span class="mono">04</span>
+        <h3>Product for content</h3>
+        <p>For products that retail over $500. Ship one unit, we shoot the film and photos, you keep every file. We post nothing.</p>
+        <div class="price">$0<small>plus the unit</small></div>
+      </div>
+    </div>
+    <div class="incl mono"><span>Full usage rights</span><span>One round of revisions</span><span>Raw footage on request</span><span>14 days from product arrival</span></div>
+    <div class="after"><span class="mono">Not sure which one? Send the product link and we'll tell you.</span><a class="btn" href="#brief">Get a quote</a></div>
+  </div>
+</section>
+
+<section class="block" id="review">
+  <div class="wrap review">
+    <div>
+      <span class="mono">04 / Free listing review</span>
+      <h2 style="font-size:clamp(38px,5.6vw,76px);line-height:.98;margin-top:14px">Not ready to shoot? <em>Start with a free review.</em></h2>
+      <ul>
+        <li>Send one Amazon listing.</li>
+        <li>We send back a written review of the main images, video, bullets and A+ content: what works, what we'd change, and why it matters for conversion.</li>
+        <li>No product to ship. No call. No strings.</li>
+      </ul>
+    </div>
+    <aside class="brief" aria-labelledby="revTitle">
+      <span class="mono tally">Takes 20 seconds</span>
+      <h2 id="revTitle">Send the listing.</h2>
+      <p class="sub">Your review arrives by email within a few days.</p>
+      <form id="reviewForm" novalidate>
+        <label for="rLink">Amazon listing link<input id="rLink" name="link" placeholder="amazon.com/dp/..." inputmode="url" required></label>
+        <label for="rEmail">Email<input id="rEmail" name="email" type="email" autocomplete="email" required></label>
+        <button class="btn" type="submit">Review my listing</button>
+      </form>
+      <div class="result" id="reviewResult" role="status" aria-live="polite"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="head"><div><span class="mono">05 / Process</span><h2>Three steps. <em>Two weeks.</em></h2><p>How a product shoot runs. Corporate, law firm and medical shoots are filmed at your office on a date we set together.</p></div></div>
+    <div class="steps">
+      <div class="step"><span class="mono tally">Day 0</span><h3>Ship</h3><p>You send one unit to our Miami studio and a short note on who buys it. We write the shot list and send it for your sign-off.</p></div>
+      <div class="step"><span class="mono tally">Days 1 to 7</span><h3>Shoot</h3><p>We cast, scout and film in Miami and South Florida. Real people, real locations, the product in use.</p></div>
+      <div class="step"><span class="mono tally">By day 14</span><h3>Deliver</h3><p>Film, cutdowns and photos land in a shared folder, sized for Amazon, your site and paid social. One revision round is included.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="team">
+  <div class="wrap">
+    <div class="head"><div><span class="mono">06 / Team</span><h2>Small crew. <em class="tally">One person accountable.</em></h2><p>You deal with the director from the first email to the final file. The crew is built around your product for each shoot.</p></div></div>
+    <div class="team">
+      <div>
+        <!-- Replace the initials with a photo: <img src="judson.jpg" alt="Judson Robertson"> inside .portrait -->
+        <div class="portrait"><span>JR</span></div>
+        <div class="lead">
+          <span class="mono tally">Founder / Director · Miami, Florida</span>
+          <h3>Judson Robertson</h3>
+          <p>Directs, shoots and edits. Your point of contact on every project.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mono">On set</span>
+        <div class="crew" style="margin-top:14px">
+          <div><b>Director / DP</b><p>Plans the shot list with you, runs the day and operates the main camera.</p></div>
+          <div><b>Camera operator</b><p>Second angle, motion and detail shots on production days.</p></div>
+          <div><b>Production assistant</b><p>Keeps the product, locations and schedule moving.</p></div>
+          <div><b>Cast talent</b><p>Cast to match the person who actually buys your product.</p></div>
+          <div><b>Edit and colour</b><p>Done in-house, so revisions come back fast.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="after"><span class="mono">Talk to the person who will shoot it.</span><a class="btn" href="#brief">Get a quote</a></div>
+  </div>
+</section>
+
+<section class="block" id="proof">
+  <div class="wrap proof">
+    <div>
+      <span class="mono">07 / Proof</span>
+      <p class="quote" style="margin-top:20px">They delivered high-quality, engaging content that matched our brand vision perfectly. We look forward to future collaborations.</p>
+      <p class="mono who">Cailyn, Zonveer marketing team — DX1 electric dirt bike film</p>
+    </div>
+    <div class="facts mono">
+      <div><b>35+</b>brand projects filmed</div>
+      <div><b>1</b>revision round included in every package</div>
+      <div><b>0</b>posts from us. Your content stays yours.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="head"><div><span class="mono">08 / Questions</span><h2>Before you ask.</h2></div></div>
+    <details><summary>How much does a product video cost?</summary><p>A single product starts at $1,500 for a 45-second film and 15 photos. Three products in one shoot is $2,500. A full production day with cast talent and crew is $3,000. Anything outside those gets a written quote first.</p></details>
+    <details><summary>Do you film corporate, law firm and medical videos?</summary><p>Yes. Alongside product films, No Coordinates Media shoots company and brand films, attorney and firm videos, and videos for medical practices. These are filmed at your office or on location in South Florida and quoted by the production day.</p></details>
+    <details><summary>Where do you film?</summary><p>Across Miami-Dade and Broward, including Miami and Fort Lauderdale. Product brands anywhere in the world ship one unit to the studio.</p></details>
+    <details><summary>How long does it take?</summary><p>Product films take 14 days from the day your product arrives at the studio to final files. Other shoots get a delivery date in the written quote.</p></details>
+    <details><summary>Who owns the footage?</summary><p>You do. Full usage rights on every channel, with no licence fees or renewals. Raw footage is available on request.</p></details>
+    <details><summary>Are you influencers? Will you post it?</summary><p>No. We're a production studio, not creators or affiliates. We post nothing and take no commission. You get the files and run them wherever you sell.</p></details>
+    <details><summary>We're based outside the US. Does that work?</summary><p>Yes. Many of our clients are brands based in China that sell in the US. You ship one unit to our studio and everything else happens by email, WhatsApp or WeChat. The film is shot in the US, with people and locations your American buyers recognize.</p></details>
+    <details><summary>What if we want changes?</summary><p>One round of revisions is included in every package.</p></details>
+  </div>
+</section>
+
+<section class="closer">
+  <div class="wrap">
+    <span class="mono">Next</span>
+    <h2>Tell us the job.<br>We'll send back <em>the film.</em></h2>
+    <div class="hero-cta">
+      <a class="btn" href="#brief">Get a quote</a>
+      <a class="btn ghost" href="#review">Get a free listing review</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap mono">
+    <span>© 2026 No Coordinates Media</span>
+    <span>Email: <a href="mailto:judson@nocoordinatesmedia.com">judson@nocoordinatesmedia.com</a></span>
+    <span>WhatsApp / WeChat: +1 954 405 2460</span>
+    <span>Miami · Fort Lauderdale, Florida</span>
+  </div>
+</footer>
+
+<div id="player" role="dialog" aria-modal="true" aria-label="Film player">
+  <button class="btn ghost" id="closePlayer" type="button">Close</button>
+  <div class="box" id="playerBox"></div>
+</div>
+
+<script>
+(function(){
+  var TO='judson@nocoordinatesmedia.com';
+  var CDN='https://i.vimeocdn.com/video/';
+
+  /* film grain: one noise tile, drawn once */
+  try{
+    var c=document.createElement('canvas');c.width=c.height=220;
+    var x=c.getContext('2d'),d=x.createImageData(220,220);
+    for(var i=0;i<d.data.length;i+=4){var v=Math.random()*255|0;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}
+    x.putImageData(d,0,0);
+    document.getElementById('grain').style.backgroundImage='url('+c.toDataURL('image/png')+')';
+  }catch(e){}
+
+  /* Vimeo: thumbnails and players load only where outside media is allowed.
+     Until then every film is a typeset poster that opens on Vimeo. */
+  var external=false;
+  var films=[].slice.call(document.querySelectorAll('.film'));
+  var probe=new Image();
+  probe.onload=function(){
+    external=true;
+    document.body.classList.add('ext');
+    films.forEach(function(f){f.querySelector('img').src=f.dataset.yt?'https://i.ytimg.com/vi/'+f.dataset.yt+'/hqdefault.jpg':CDN+f.dataset.th+'-d_960';});
+    var bg=document.createElement('iframe');
+    bg.src='https://player.vimeo.com/video/896634422?background=1&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&dnt=1';
+    bg.allow='autoplay; fullscreen';bg.title='';bg.tabIndex=-1;
+    var hb=document.getElementById('heroBg');hb.insertBefore(bg,hb.firstChild);
+  };
+  probe.src=CDN+films[0].dataset.th+'-d_295x166';
+
+  /* moving pictures: the reel strip plays muted when it scrolls into view,
+     and every other tile previews on hover */
+  function bgSrc(id){return 'https://player.vimeo.com/video/'+id+'?background=1&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&dnt=1'}
+  function startPreview(f){
+    if(!external||f.dataset.yt||f.querySelector('.frame iframe'))return;
+    var fr=document.createElement('iframe');fr.src=bgSrc(f.dataset.id);fr.allow='autoplay';fr.title='';fr.tabIndex=-1;fr.setAttribute('aria-hidden','true');
+    f.querySelector('.frame').insertBefore(fr,f.querySelector('.ghost-title'));
+  }
+  function stopPreview(f){var fr=f.querySelector('.frame iframe');if(fr)fr.remove();}
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!calm){
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){en.isIntersecting?startPreview(en.target):stopPreview(en.target)})},{threshold:.35});
+      [].forEach.call(document.querySelectorAll('.film.loop'),function(f){io.observe(f)});
+      var _on=probe.onload;probe.onload=function(){_on();[].forEach.call(document.querySelectorAll('.film.loop'),function(f){io.unobserve(f);io.observe(f)})};
+    }
+    films.forEach(function(f){
+      if(f.classList.contains('loop'))return;
+      var t;
+      f.addEventListener('mouseenter',function(){t=setTimeout(function(){startPreview(f)},220)});
+      f.addEventListener('mouseleave',function(){clearTimeout(t);stopPreview(f)});
+    });
+  }
+
+  var player=document.getElementById('player'),box=document.getElementById('playerBox');
+  function closePlayer(){player.classList.remove('on');box.innerHTML='';}
+  films.forEach(function(f){
+    f.addEventListener('click',function(){
+      var id=f.dataset.id;
+      var yt=f.dataset.yt;
+      if(!external){var a=document.createElement('a');a.href=yt?'https://www.youtube.com/watch?v='+yt:'https://vimeo.com/'+id;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();return;}
+      box.innerHTML='<iframe src="'+(yt?'https://www.youtube-nocookie.com/embed/'+yt+'?autoplay=1&rel=0':'https://player.vimeo.com/video/'+id+'?autoplay=1&title=0&byline=0&portrait=0&dnt=1')+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Film"></iframe>';
+      player.classList.add('on');document.getElementById('closePlayer').focus();
+    });
+  });
+  document.getElementById('closePlayer').addEventListener('click',closePlayer);
+  player.addEventListener('click',function(e){if(e.target===player)closePlayer();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePlayer();});
+
+  /* forms: build the brief and hand it to the visitor's mail app.
+     Replace handle() with a POST to your form endpoint when the site is hosted. */
+  function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function handle(form,out,subject,lines){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var fd=new FormData(form),missing=[];
+      [].forEach.call(form.querySelectorAll('[required]'),function(el){if(!el.value.trim())missing.push(el)});
+      if(missing.length){missing[0].focus();out.className='result on';out.textContent='Fill in the highlighted field and try again.';missing[0].style.borderColor='var(--tally)';return;}
+      var body=lines(fd).join('\n');
+      var href='mailto:'+TO+'?subject='+encodeURIComponent(subject(fd))+'&body='+encodeURIComponent(body);
+      out.className='result on';
+      out.innerHTML='<b>Your brief is ready.</b> Send it to '+TO+' to get your reply.<pre>'+esc(body)+'</pre><div class="row"><a class="btn" href="'+href+'">Open in email</a><button class="btn ghost" type="button">Copy brief</button></div>';
+      out.querySelector('button').addEventListener('click',function(ev){
+        var b=ev.currentTarget;
+        (navigator.clipboard?navigator.clipboard.writeText(body):Promise.reject()).then(function(){b.textContent='Copied'},function(){b.textContent='Select the text above to copy'});
+      });
+    });
+  }
+  handle(document.getElementById('quoteForm'),document.getElementById('quoteResult'),
+    function(fd){return 'Quote request: '+fd.get('brand')},
+    function(fd){return['Name: '+fd.get('name'),'Email: '+fd.get('email'),'Brand: '+fd.get('brand'),'Product link: '+(fd.get('link')||'not given'),'Project: '+fd.get('budget')]});
+  handle(document.getElementById('reviewForm'),document.getElementById('reviewResult'),
+    function(){return 'Free listing review request'},
+    function(fd){return['Listing: '+fd.get('link'),'Email: '+fd.get('email')]});
+})();
+</script>
+</body>
+</html>
