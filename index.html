@@ -248,6 +248,12 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 .closer .wm{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);height:118%;width:auto;opacity:.16;pointer-events:none}
 .closer .wrap{position:relative}
 
+.fnav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 30px;padding-bottom:30px;margin-bottom:26px;border-bottom:1px solid var(--rule)}
+.fnav h3{font-family:var(--mono);font-size:11.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:12px}
+.fnav a{display:block;border:0;color:#d2ccbf;font-family:var(--body);font-size:15px;letter-spacing:0;text-transform:none;padding:4px 0}
+.fnav a:hover{color:var(--tally)}
+@media (max-width:900px){.fnav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* player */
 #player{position:fixed;inset:0;z-index:60;background:rgba(5,4,4,.94);display:none;align-items:center;justify-content:center;padding:var(--gutter)}
 #player.on{display:flex}
@@ -723,6 +729,23 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 
 <footer>
   <div class="wrap"><img class="flogo" src="img/logo-full-white.png" alt="No Coordinates Media" width="492" height="700" loading="lazy"></div>
+  <div class="wrap"><nav class="fnav" aria-label="Site pages">
+    <div><h3>Services</h3>
+      <a href="/amazon-product-video">Amazon product video</a>
+      <a href="/us-video-production-for-chinese-brands">US production for Chinese brands</a>
+      <a href="#services">All services</a></div>
+    <div><h3>Industries</h3>
+      <a href="/e-bike-video-production">E-bike and scooter video</a>
+      <a href="/portable-power-video-production">Portable power video</a></div>
+    <div><h3>Start</h3>
+      <a href="/pricing">Pricing</a>
+      <a href="/free-listing-review">Free listing review</a>
+      <a href="/contact">Contact</a></div>
+    <div><h3>Studio</h3>
+      <a href="/about">About</a>
+      <a href="#work">Work</a>
+      <a href="#stills">Stills</a></div>
+  </nav></div>
   <div class="wrap mono">
     <span>© 2026 No Coordinates Media</span>
     <span>Email: <a href="mailto:judson@nocoordinatesmedia.com">judson@nocoordinatesmedia.com</a></span>
