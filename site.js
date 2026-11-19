@@ -47,6 +47,13 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   }
 
+  function send(subject,pairs){
+    var f=document.createElement('form');f.method='POST';f.action='https://formsubmit.co/'+TO;f.style.display='none';
+    var all=pairs.concat([['Page',location.pathname],['_subject',subject],['_template','table'],['_next','https://nocoordinatesmedia.com/thanks'],
+      ['_autoresponse','Thanks for reaching out to No Coordinates Media. We have your request and will reply with a price and shoot plan within one business day. Need us sooner? WhatsApp or WeChat: +1 954 405 2460.'],['_honey','']]);
+    all.forEach(function(p){var i=document.createElement('input');i.type='hidden';i.name=p[0];i.value=p[1];f.appendChild(i)});
+    document.body.appendChild(f);f.submit();
+  }
   function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
   [].forEach.call(document.querySelectorAll('form[data-lead]'),function(form){
     var out=form.parentNode.querySelector('.result');
@@ -55,16 +62,11 @@
       var missing=[];
       [].forEach.call(form.querySelectorAll('[required]'),function(el){if(!el.value.trim())missing.push(el)});
       if(missing.length){missing[0].focus();out.className='result on';out.textContent='Fill in the highlighted field and try again.';missing[0].style.borderColor='var(--tally)';return;}
-      var lines=['Form: '+form.dataset.lead,'Page: '+location.pathname];
-      [].forEach.call(form.querySelectorAll('[name]'),function(el){lines.push(el.dataset.label+': '+(el.value||'not given'))});
-      var body=lines.join('\n');
-      var href='mailto:'+TO+'?subject='+encodeURIComponent(form.dataset.lead)+'&body='+encodeURIComponent(body);
-      out.className='result on';
-      out.innerHTML='<b>Your brief is ready.</b> Send it to '+TO+' to get your reply.<pre>'+esc(body)+'</pre><div class="row"><a class="btn" href="'+href+'">Open in email</a><button class="btn ghost" type="button">Copy brief</button></div>';
-      out.querySelector('button').addEventListener('click',function(ev){
-        var b=ev.currentTarget;
-        (navigator.clipboard?navigator.clipboard.writeText(body):Promise.reject()).then(function(){b.textContent='Copied'},function(){b.textContent='Select the text above to copy'});
-      });
+      var pairs=[];
+      [].forEach.call(form.querySelectorAll('[name]'),function(el){pairs.push([el.name==='email'?'email':el.dataset.label,el.value||'not given'])});
+      out.className='result on';out.textContent='Sending your request...';
+      var brand=form.querySelector('[name=brand]');
+      send(form.dataset.lead+(brand&&brand.value?': '+brand.value:''),pairs);
     });
   });
 })();

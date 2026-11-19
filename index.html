@@ -845,31 +845,31 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
   player.addEventListener('click',function(e){if(e.target===player)closePlayer();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closePlayer();});
 
-  /* forms: build the brief and hand it to the visitor's mail app.
-     Replace handle() with a POST to your form endpoint when the site is hosted. */
+  /* forms: post the request to FormSubmit, which emails it to the studio and auto-replies to the lead */
   function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function send(subject,pairs){
+    var f=document.createElement('form');f.method='POST';f.action='https://formsubmit.co/'+TO;f.style.display='none';
+    var all=pairs.concat([['Page',location.pathname],['_subject',subject],['_template','table'],['_next','https://nocoordinatesmedia.com/thanks'],
+      ['_autoresponse','Thanks for reaching out to No Coordinates Media. We have your request and will reply with a price and shoot plan within one business day. Need us sooner? WhatsApp or WeChat: +1 954 405 2460.'],['_honey','']]);
+    all.forEach(function(p){var i=document.createElement('input');i.type='hidden';i.name=p[0];i.value=p[1];f.appendChild(i)});
+    document.body.appendChild(f);f.submit();
+  }
   function handle(form,out,subject,lines){
     form.addEventListener('submit',function(e){
       e.preventDefault();
       var fd=new FormData(form),missing=[];
       [].forEach.call(form.querySelectorAll('[required]'),function(el){if(!el.value.trim())missing.push(el)});
       if(missing.length){missing[0].focus();out.className='result on';out.textContent='Fill in the highlighted field and try again.';missing[0].style.borderColor='var(--tally)';return;}
-      var body=lines(fd).join('\n');
-      var href='mailto:'+TO+'?subject='+encodeURIComponent(subject(fd))+'&body='+encodeURIComponent(body);
-      out.className='result on';
-      out.innerHTML='<b>Your brief is ready.</b> Send it to '+TO+' to get your reply.<pre>'+esc(body)+'</pre><div class="row"><a class="btn" href="'+href+'">Open in email</a><button class="btn ghost" type="button">Copy brief</button></div>';
-      out.querySelector('button').addEventListener('click',function(ev){
-        var b=ev.currentTarget;
-        (navigator.clipboard?navigator.clipboard.writeText(body):Promise.reject()).then(function(){b.textContent='Copied'},function(){b.textContent='Select the text above to copy'});
-      });
+      out.className='result on';out.textContent='Sending your request...';
+      send(subject(fd),lines(fd));
     });
   }
   handle(document.getElementById('quoteForm'),document.getElementById('quoteResult'),
     function(fd){return 'Quote request: '+fd.get('brand')},
-    function(fd){return['Name: '+fd.get('name'),'Email: '+fd.get('email'),'Brand: '+fd.get('brand'),'Product link: '+(fd.get('link')||'not given'),'Project: '+fd.get('budget')]});
+    function(fd){return[['Name',fd.get('name')],['email',fd.get('email')],['Brand',fd.get('brand')],['Link',fd.get('link')||'not given'],['Project',fd.get('budget')]]});
   handle(document.getElementById('reviewForm'),document.getElementById('reviewResult'),
     function(){return 'Free listing review request'},
-    function(fd){return['Listing: '+fd.get('link'),'Email: '+fd.get('email')]});
+    function(fd){return[['Listing',fd.get('link')],['email',fd.get('email')]]});
 })();
 </script>
 </body>
