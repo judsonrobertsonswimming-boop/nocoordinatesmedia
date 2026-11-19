@@ -5,11 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Miami &amp; Fort Lauderdale Video Production | No Coordinates</title>
 <link rel="canonical" href="https://nocoordinatesmedia.com/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:image" content="https://nocoordinatesmedia.com/img/og.jpg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="No Coordinates Media — Video production in Miami &amp; Fort Lauderdale">
 <meta property="og:url" content="https://nocoordinatesmedia.com/">
 <meta name="description" content="Video production in Miami and Fort Lauderdale: product films and photos, corporate, law firm and medical practice videos. Prices from $1,500.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"No Coordinates Media","url":"https://nocoordinatesmedia.com/","email":"judson@nocoordinatesmedia.com","telephone":"+1-954-405-2460","description":"Video production studio in South Florida filming product videos and photography, corporate and brand films, and videos for law firms and medical practices.","areaServed":["Miami, FL","Fort Lauderdale, FL","United States"],"founder":{"@type":"Person","name":"Judson Robertson"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"No Coordinates Media","url":"https://nocoordinatesmedia.com/","logo":"https://nocoordinatesmedia.com/img/og.jpg","email":"judson@nocoordinatesmedia.com","telephone":"+1-954-405-2460","description":"Video production studio in South Florida filming product videos and photography, corporate and brand films, and videos for law firms and medical practices.","areaServed":["Miami, FL","Fort Lauderdale, FL","United States"],"founder":{"@type":"Person","name":"Judson Robertson"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inconsolata:wght@400;500;600&display=swap" rel="stylesheet">
@@ -52,7 +56,7 @@ em{font-style:normal}
 .nav{position:sticky;top:0;z-index:40;background:linear-gradient(var(--stock),rgba(10,9,8,.82) 70%,transparent);padding:18px 0 22px}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase}
-.mark svg{width:20px;height:20px}
+.mark img{height:34px;width:auto}
 .nav nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);flex-wrap:wrap}
 .nav nav a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ash)}
 .nav nav a:hover{color:var(--bone)}
@@ -240,6 +244,9 @@ details p{color:#c9c3b6;max-width:68ch;padding:0 0 24px}
 footer{border-top:1px solid var(--rule);padding:28px 0 40px}
 footer .wrap{display:flex;justify-content:space-between;gap:18px 40px;flex-wrap:wrap}
 footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+.flogo{width:clamp(120px,14vw,170px);height:auto;margin-bottom:28px}
+.closer .wm{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);height:118%;width:auto;opacity:.16;pointer-events:none}
+.closer .wrap{position:relative}
 
 /* player */
 #player{position:fixed;inset:0;z-index:60;background:rgba(5,4,4,.94);display:none;align-items:center;justify-content:center;padding:var(--gutter)}
@@ -287,7 +294,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 <header class="nav">
   <div class="wrap">
     <a class="mark" href="#top" aria-label="No Coordinates Media, home">
-      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="5.5"/><path d="M10 0v6M10 14v6M0 10h6M14 10h6"/></svg>
+      <img src="img/nc-white.png" alt="" width="28" height="34">
       No Coordinates
     </a>
     <nav aria-label="Primary">
@@ -702,6 +709,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 </section>
 
 <section class="closer">
+  <img class="wm" src="img/nc-crimson.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
     <span class="mono">Next</span>
     <h2>Tell us the job.<br>We'll send back <em>the film.</em></h2>
@@ -714,6 +722,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 </main>
 
 <footer>
+  <div class="wrap"><img class="flogo" src="img/logo-full-white.png" alt="No Coordinates Media" width="492" height="700" loading="lazy"></div>
   <div class="wrap mono">
     <span>© 2026 No Coordinates Media</span>
     <span>Email: <a href="mailto:judson@nocoordinatesmedia.com">judson@nocoordinatesmedia.com</a></span>
