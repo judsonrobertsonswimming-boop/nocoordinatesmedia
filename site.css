@@ -229,6 +229,12 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 .closer .wm{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);height:118%;width:auto;opacity:.16;pointer-events:none}
 .closer .wrap{position:relative}
 
+.fnav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 30px;padding-bottom:30px;margin-bottom:26px;border-bottom:1px solid var(--rule)}
+.fnav h3{font-family:var(--mono);font-size:11.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:12px}
+.fnav a{display:block;border:0;color:#d2ccbf;font-family:var(--body);font-size:15px;letter-spacing:0;text-transform:none;padding:4px 0}
+.fnav a:hover{color:var(--tally)}
+@media (max-width:900px){.fnav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* player */
 #player{position:fixed;inset:0;z-index:60;background:rgba(5,4,4,.94);display:none;align-items:center;justify-content:center;padding:var(--gutter)}
 #player.on{display:flex}
@@ -288,6 +294,11 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
 .sec ul.plain{list-style:none;display:grid;gap:10px;margin-top:20px;max-width:70ch}
 .sec ul.plain li{display:grid;grid-template-columns:28px 1fr;color:#c9c3b6}
 .sec ul.plain li::before{content:"\2192";color:var(--tally)}
+.sec ol.num{list-style:none;counter-reset:n;display:grid;gap:14px;margin-top:22px;max-width:70ch}
+.sec ol.num li{counter-increment:n;display:grid;grid-template-columns:40px 1fr;color:#c9c3b6}
+.sec ol.num li::before{content:counter(n,decimal-leading-zero);font-family:Inconsolata,monospace;color:var(--tally)}
+.sec ol.num li b{color:var(--paper,#f2ede2)}
+.sec h3.sub-h{margin:34px 0 4px;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#c9c3b6;font-weight:500}
 .sec .table,.sec .cases,.sec .stillgrid,.sec .steps,.sec .faqs{margin-top:clamp(24px,3vw,40px)}
 .dt{width:100%;border-collapse:collapse;margin-top:clamp(24px,3vw,40px);font-size:15.5px}
 .dt th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);font-weight:400;text-align:left;padding:10px 14px 10px 0;border-bottom:1px solid var(--rule)}
