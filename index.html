@@ -788,11 +788,11 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
     document.body.classList.add('ext');
     films.forEach(function(f){f.querySelector('img').src=f.dataset.yt?'https://i.ytimg.com/vi/'+f.dataset.yt+'/hqdefault.jpg':CDN+f.dataset.th+'-d_960';});
     var bg=document.createElement('iframe');
-    var REEL='809910788',BGQ='?background=1&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&dnt=1';
+    var REEL='809910788',BGQ='?h=24340d3521&background=1&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&dnt=1';
     bg.src='https://player.vimeo.com/video/'+REEL+BGQ;
     /* if the reel cannot be embedded (privacy setting), fall back to the KingBull film */
     var ps=document.createElement('script');ps.src='https://player.vimeo.com/api/player.js';
-    ps.onload=function(){try{new Vimeo.Player(bg).ready().catch(function(){bg.src='https://player.vimeo.com/video/896634422'+BGQ;})}catch(e){}};
+    ps.onload=function(){try{new Vimeo.Player(bg).ready().catch(function(){bg.src='https://player.vimeo.com/video/896634422'+BGQ.replace('h=24340d3521&','');})}catch(e){}};
     document.head.appendChild(ps);
     bg.allow='autoplay; fullscreen';bg.title='';bg.tabIndex=-1;
     var hb=document.getElementById('heroBg');hb.insertBefore(bg,hb.firstChild);
@@ -837,8 +837,8 @@ footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
     });
   });
   document.getElementById('reelBtn').addEventListener('click',function(){
-    if(!external){window.open('https://vimeo.com/809910788','_blank','noopener');return;}
-    box.innerHTML='<iframe src="https://player.vimeo.com/video/809910788?autoplay=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Showreel"></iframe>';
+    if(!external){window.open('https://vimeo.com/809910788/24340d3521','_blank','noopener');return;}
+    box.innerHTML='<iframe src="https://player.vimeo.com/video/809910788?h=24340d3521&autoplay=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Showreel"></iframe>';
     player.classList.add('on');document.getElementById('closePlayer').focus();
   });
   document.getElementById('closePlayer').addEventListener('click',closePlayer);
